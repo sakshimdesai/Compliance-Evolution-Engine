@@ -1,5 +1,10 @@
 # Compliance Evolution Engine
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![React](https://img.shields.io/badge/React-Frontend-61dafb)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 > Transforming SEBI regulations into executable, auditable compliance workflows.
 
 Compliance Evolution Engine is an AI-powered regulatory intelligence platform that converts SEBI circulars into structured, machine-actionable compliance obligations. Instead of simply summarizing regulatory documents, the platform identifies regulatory changes, reconciles evolving obligations, and generates explainable compliance patches with complete audit traceability.
@@ -33,6 +38,9 @@ Compliance Evolution Engine transforms regulatory text into structured operation
 Rather than acting as a chatbot, the platform helps organizations understand exactly **what changed, why it changed, and what action should be taken.**
 
 ---
+## System Architecture
+
+![Architecture](design/Architecture%20Diagram.png)
 
 ## Core Features
 
