@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Compliance Obligation",
+  "description": "Schema representing a structured compliance obligation extracted from a SEBI regulatory circular.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "source_circular",
+    "clause_reference",
+    "source_text",
+    "applicable_to",
+    "owner_department",
+    "deadline",
+    "evidence_required",
+    "priority",
+    "status",
+    "confidence",
+    "citation"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique obligation identifier.",
+      "example": "OBL-2026-001"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short descriptive title of the obligation."
+    },
+    "source_circular": {
+      "type": "string",
+      "description": "SEBI circular from which this obligation was extracted.",
+      "example": "SEBI Master Circular 2026-145"
+    },
+    "clause_reference": {
+      "type": "string",
+      "description": "Clause or section reference.",
+      "example": "Clause 7.2"
+    },
+    "source_text": {
+      "type": "string",
+      "description": "Original regulatory text extracted from the circular."
+    },
+    "applicable_to": {
+      "type": "array",
+      "description": "Entities to which this obligation applies.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_department": {
+      "type": "string",
+      "description": "Department responsible for implementing the obligation.",
+      "enum": [
+        "Compliance",
+        "Operations",
+        "Risk",
+        "Technology",
+        "Legal",
+        "Finance",
+        "Audit",
+        "HR",
+        "Management",
+        "Other"
+      ]
+    },
+    "deadline": {
+      "type": "string",
+      "description": "Regulatory deadline associated with the obligation.",
+      "example": "T+1 Working Day"
+    },
+    "evidence_required": {
+      "type": "string",
+      "description": "Evidence required to demonstrate compliance."
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Modified",
+        "Superseded",
+        "Retired"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Model confidence score for the extracted obligation."
+    },
+    "citation": {
+      "type": "object",
+      "required": [
+        "page",
+        "paragraph"
+      ],
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "paragraph": {
+          "type": "integer"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional system metadata.",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
